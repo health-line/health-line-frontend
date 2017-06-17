@@ -1,7 +1,10 @@
-.dashboard {
-	width: 100%;
-	max-width: 100%;
+.h100 {
 	height: 100%;
-	min-height: 100px;
-	min-width: 100px;
+}
+.container, .row {
+	max-width: 100%;
+}
+
+.row {
+	margin-left: 0 !important;
 }
