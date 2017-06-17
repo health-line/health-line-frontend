@@ -44,7 +44,6 @@ def users():
         users.append(user)
     return jsonify(users)
 
-
 @app.route("/user/<int:userId>/data/<string:dataKeys>/start/<string:startDate>/end/<string:endDate>")
 def data(userId, dataKeys, startDate, endDate):
     keys = "(\'" + "\', \'".join(dataKeys.split("+")) + "\')"
@@ -56,8 +55,24 @@ def data(userId, dataKeys, startDate, endDate):
         if dateKey not in dateDictionary:
             dateDictionary[dateKey] = {"DATE": row[0].strftime("%Y-%m-%d")}
         dateDictionary[row[0].toordinal()][row[1]] = row[2]
-
     return jsonify(dateDictionary.values())
+
+@app.route("/user/<int:userId>/gesundheitscloud/")
+def gesundheitscloud(userId):
+    sql = text("""SELECT * FROM "HPI_2017"."GESUNDHEITSCLOUD" WHERE "USER" = {0} ORDER BY "DATE_START" DESC""".format(userId))
+    result = db.engine.execute(sql)
+    cloudResults = []
+    for row in result:
+        document = {}
+        document["DATE_START"] = row[0]
+        document["DATE_END"] = row[1]
+        document["FACILITY"] = row[2]
+        document["LOCATION"] = row[3]
+        document["TREATMENT"] = row[4]
+        document["TYPE"] = row[6]
+        document["DESCRIPTION"] = row[5]
+        cloudResults.append(document)
+    return jsonify(cloudResults)
 
 
 
