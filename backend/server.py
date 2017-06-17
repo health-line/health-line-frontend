@@ -4,8 +4,11 @@ import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['SQLALCHEMY_DATABASE_URI']
+app.run(debug=True, port=4200, host="0.0.0.0")
 
 db = SQLAlchemy(app)
+db.engine.execute(text("""SET SCHEMA HPI_2017;"""))
+
 
 @app.route("/")
 def hello():
