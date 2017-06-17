@@ -54,7 +54,7 @@ def data(userId, dataKeys, startDate, endDate):
     for row in result:
         dateKey = row[0].toordinal()
         if dateKey not in dateDictionary:
-            dateDictionary[dateKey] = {"date": row[0].strftime("%Y-%m-%d")}
+            dateDictionary[dateKey] = {"DATE": row[0].strftime("%Y-%m-%d")}
         dateDictionary[row[0].toordinal()][row[1]] = row[2]
 
     return jsonify(dateDictionary.values())
