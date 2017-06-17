@@ -74,6 +74,21 @@ def gesundheitscloud(userId):
         cloudResults.append(document)
     return jsonify(cloudResults)
 
+@app.route("/user/<int:userId>/events/")
+def events(userId):
+    sql = text("""SELECT * FROM "HPI_2017"."EVENTS" WHERE "USER" = {0} ORDER BY "DATE_START" DESC""".format(userId))
+    result = db.engine.execute(sql)
+    events = []
+    for row in result:
+        event = {}
+    	event["DATE_START"] = row[0]
+        event["DATE_END"] = row[1]
+        event["TYPE"] = row[3]
+        event["TITLE"] = row[4]
+        event["DESCRIPTION"] = row[5]
+        events.append(event)
+    return jsonify(events)
+
 
 
 
