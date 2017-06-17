@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
-import Dashboard from 'Dashboard/Dashboard';
+import Dashboard from './Dashboard/Dashboard';
 import './App.css';
 
 class App extends Component {
