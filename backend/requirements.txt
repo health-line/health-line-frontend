@@ -4,3 +4,7 @@ scipy
 pandas
 sklearn
 mysql-python
+pyhdb
+flask-sqlalchemy
+sqlalchemy
+sqlalchemy-hana
