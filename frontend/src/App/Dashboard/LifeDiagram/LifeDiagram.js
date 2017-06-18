@@ -1,14 +1,11 @@
 import React, {Component} from "react";
-import {Card, CardText} from "material-ui/Card";
-import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from "material-ui/Table";
 import {Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
 import "./../Dashboard.css";
-import { connect, PromiseState } from 'react-refetch'
-import settings from '../../../settings';
+import {connect} from "react-refetch";
+import settings from "../../../settings";
 //import users from '../../data/users.json';
 import data from "../../../data/mocked_data.json";
 // import data from '../../data/peak_min-peak_max-steps-data.json';
-import datakeys from "../../../data/datakeys.json";
 
 class LifeDiagram extends Component {
 	constructor() {

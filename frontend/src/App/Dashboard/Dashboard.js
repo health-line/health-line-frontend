@@ -1,14 +1,12 @@
 import React, {Component} from "react";
 import {Card, CardText} from "material-ui/Card";
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from "material-ui/Table";
-import {Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
 import "./Dashboard.css";
 import User from "./User/User";
-import { connect, PromiseState } from 'react-refetch'
+import {connect} from "react-refetch";
 import LifeDiagram from "./LifeDiagram/LifeDiagram";
-import settings from '../../settings';
+import settings from "../../settings";
 //import users from '../../data/users.json';
-import data from "../../data/mocked_data.json";
 // import data from '../../data/peak_min-peak_max-steps-data.json';
 import datakeys from "../../data/datakeys.json";
 
@@ -88,7 +86,6 @@ class Dashboard extends Component {
 										</TableRow>
 									</TableHeader>
 									<TableBody>
-
 										{datakeys.map((datakey, index) => {
 											return(
 												<TableRow selected={this.isSelected(index)}>
@@ -102,7 +99,6 @@ class Dashboard extends Component {
 						</Card>
 					</div>
 				</div>
-
 			</div>
 		);
 	}
