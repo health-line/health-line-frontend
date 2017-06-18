@@ -53,7 +53,6 @@ class LifeDiagram extends Component {
                             </linearGradient>
                         </defs>
 						<XAxis xAxisId={0} dataKey="DATE"/>
-						<CartesianGrid strokeDasharray="3 3"/>
 						<Tooltip />
                         {this.props.selectedKeys.map((datakey, index) => {
                             return (<YAxis yAxisId={datakey} hide={true} key={`yaxis`+index.toString()}/>);
