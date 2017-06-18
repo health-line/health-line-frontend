@@ -99,7 +99,7 @@ def events(userId):
     events = []
     for row in result:
         event = {}
-    	event["DATE_START"] = row[0]
+        event["DATE_START"] = row[0]
         event["DATE_END"] = row[1]
         event["TYPE"] = row[3]
         event["TITLE"] = row[4]
