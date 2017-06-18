@@ -11,9 +11,8 @@ class App extends Component {
             <MuiThemeProvider>
 	            <div>
 		            <AppBar
-			            title="HackHPI 2017"
-			            iconClassNameRight="muidocs-icon-navigation-expand-more"
-		            />
+			            title="Health ⊕ Line"
+			            iconClassNameRight="muidocs-icon-navigation-expand-more" />
 		            <Router>
 			            <Route exact path="/:userId" component={Dashboard}/>
 		            </Router>
