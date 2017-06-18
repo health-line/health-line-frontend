@@ -28,9 +28,9 @@ class LifeDiagram extends Component {
 	}
 
 	render() {
-        const { data, events } = this.props;
+        const { data, events, gesundheitscloud } = this.props;
 
-        const allFetches = PromiseState.all([data, events])
+        const allFetches = PromiseState.all([data, events, gesundheitscloud])
 
         if (allFetches.pending) {
             return <div>Loading...</div>;
@@ -64,11 +64,26 @@ class LifeDiagram extends Component {
 									x1={startDateString}
 									x2={endDateString}
 									label={<AreaLabel label={dataEvent["TITLE"]} />}
-									key={`refArea`+index.toString()}
+									key={`refAreaEvents`+index.toString()}
 									stroke="red"
 									strokeOpacity={0.3} />
 							);
 						})}
+                        {gesundheitscloud.value.map((dataEvent, index) => {
+                            const startDateString = new Date(dataEvent["DATE_START"]).toISOString().split("T")[0];
+                            const endDateString = new Date(dataEvent["DATE_END"]).toISOString().split("T")[0];
+                            return (
+                                <ReferenceArea
+                                    xAxisId={0}
+                                    yAxisId={this.props.selectedKeys[0]}
+                                    x1={startDateString}
+                                    x2={endDateString}
+                                    label={<AreaLabel label={dataEvent["TREATMENT"]} />}
+                                    key={`refAreaGesundheit`+index.toString()}
+                                    stroke="blue"
+                                    strokeOpacity={0.3} />
+                            );
+                        })}
 					</AreaChart>
 				</ResponsiveContainer>
             );
@@ -79,5 +94,6 @@ class LifeDiagram extends Component {
 
 export default connect(props => ({
 	events: settings.backendUrl + `/user/${props.userId}/events/`,
+	gesundheitscloud: settings.backendUrl + `/user/${props.userId}/gesundheitscloud/`,
 	data: settings.backendUrl + `/user/${props.userId}/data/${props.selectedKeys.join("+")}/start/${props.startDate}/end/${props.endDate}`
 }))(LifeDiagram)
