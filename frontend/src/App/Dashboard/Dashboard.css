@@ -8,3 +8,7 @@
 .row {
 	margin-left: 0 !important;
 }
+
+.col-xs-12 {
+	margin-top: 1rem;
+}

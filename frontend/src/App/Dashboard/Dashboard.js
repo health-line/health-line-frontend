@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Card, CardText} from "material-ui/Card";
 import "./Dashboard.css";
 import User from "./User/User";
+import EventTable from "./EventTable/EventTable";
 import LifeDiagram from "./LifeDiagram/LifeDiagram";
 import MeasurementChoice from "./MeasurementChoice/MeasurementChoice";
 
@@ -39,7 +40,11 @@ class Dashboard extends Component {
     render() {
         return (
 			<div className="dashboard container">
-				<User userId={this.props.match.params.userId}/>
+				<div className="row">
+					<User userId={this.props.match.params.userId}/>
+					<EventTable userId={this.props.match.params.userId}/>
+				</div>
+
 				<div className="row">
 					<div className="mt100 col-xs-12">
 						<Card className="h100">
