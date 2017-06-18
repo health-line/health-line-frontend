@@ -48,11 +48,20 @@ class Dashboard extends Component {
 		}
         let startDate="20160101";
         let endDate="20161201";
+        if (this.props.match.params.userId === 3) {
+        	startDate="20090101";
+        	endDate="20161230";
+		}
+        if (this.props.match.params.userId === 4) {
+            startDate="20130101";
+            endDate="20400101";
+        }
         if (this.state.displayDetails) {
             const currentEvent = this.props.events.value[this.state.displayedEvent];
             startDate = new Date(currentEvent["DATE_START"]).toISOString().split("T")[0];
             endDate = new Date(currentEvent["DATE_END"]).toISOString().split("T")[0];
 		}
+
 		return (
 			<LifeDiagram
 				userId={this.props.match.params.userId}
