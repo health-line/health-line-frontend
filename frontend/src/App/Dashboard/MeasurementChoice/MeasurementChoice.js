@@ -2,26 +2,32 @@ import React, {Component} from "react";
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from "material-ui/Table";
 import {connect} from "react-refetch";
 import settings from "../../../settings";
-import './MeasurementChoice.css'
+import "./MeasurementChoice.css";
 
 class MeasurementChoice extends Component {
 	constructor() {
 		super();
 		this.state = {
 			selected_datakeys: [],
-			selected: []
+			selected: [],
 		};
+		this.isAltered = false;
 	}
 
 	isSelected(index) {
-		return this.state.selected.indexOf(index) !== -1;
+		
+		const keyIndex = this.state.selected.indexOf(index);
+		if (keyIndex === -1 && this.props.defaultKeys.includes(this.props.dataKeys.value[index]) && !this.isAltered) {
+			return true;
+		}
+		return (keyIndex >= 0);
 	}
 
 	onRowSelect(selectedRows) {
 		let selected_datakeys = [];
-
+		this.isAltered = true;
 		if (selectedRows === "all") {
-			this.props.dataKeys.value.map((datakey) => {
+			this.props.dataKeys.value.forEach((datakey) => {
 				selected_datakeys = selected_datakeys.concat([datakey]);
 			});
 		}
@@ -29,7 +35,7 @@ class MeasurementChoice extends Component {
 			selected_datakeys = [];
 		}
 		else {
-			selectedRows.map((selectedRow) => {
+			selectedRows.forEach((selectedRow) => {
 				selected_datakeys = selected_datakeys.concat(this.props.dataKeys.value[selectedRow]);
 			})
 		}

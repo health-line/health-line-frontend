@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
-import { connect, PromiseState } from 'react-refetch';
-import {Card, CardText} from 'material-ui/Card';
-import {List, ListItem} from 'material-ui/List';
-import PersonIcon from 'material-ui/svg-icons/social/person';
-import FavoriteIcon from 'material-ui/svg-icons/action/favorite';
-import AccessibilityIcon from 'material-ui/svg-icons/action/accessibility';
-import WCIcon from 'material-ui/svg-icons/notification/wc';
-import settings from '../../../settings';
-import './User.css';
+import React, {Component} from "react";
+import {connect} from "react-refetch";
+import {Card, CardText} from "material-ui/Card";
+import {List, ListItem} from "material-ui/List";
+import PersonIcon from "material-ui/svg-icons/social/person";
+import FavoriteIcon from "material-ui/svg-icons/action/favorite";
+import AccessibilityIcon from "material-ui/svg-icons/action/accessibility";
+import WCIcon from "material-ui/svg-icons/notification/wc";
+import settings from "../../../settings";
+import LoadingAnimation from "../LoadingAnimation";
+import "./User.css";
 
 class User extends Component {
 
@@ -28,7 +29,7 @@ class User extends Component {
 	render() {
         const { user } = this.props;
         if (user.pending) {
-            return <div>Loading...</div>
+            return <LoadingAnimation/>
         } else if (user.rejected) {
 			return <span>{user.reason}</span>
         } else if (user.fulfilled) {

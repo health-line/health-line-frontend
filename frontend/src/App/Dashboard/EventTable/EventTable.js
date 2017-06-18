@@ -43,7 +43,8 @@ class EventTable extends Component {
 						<ListItem
 							onClick={() => this.props.onEventsChange(index)}
 							primaryText={event["TITLE"]}
-							secondaryText={event["DESCRIPTION"]}/>
+							secondaryText={event["DESCRIPTION"]}
+							key={index} />
 					);
 				})
 			);
