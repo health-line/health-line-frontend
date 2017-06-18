@@ -2,14 +2,19 @@ from flask import Flask
 from flask import jsonify
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import text
+from flask_cors import CORS, cross_origin
 import os
 
 app = Flask(__name__)
+CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['SQLALCHEMY_DATABASE_URI']
 
 db = SQLAlchemy(app)
 db.engine.execute(text("""SET SCHEMA HPI_2017;"""))
 
+@app.route("/")
+def helloWorld():
+  return "Hello, cross-origin-world!"
 
 @app.route("/")
 def hello():
@@ -43,6 +48,19 @@ def users():
         user["HEIGHT"] = row[4]
         users.append(user)
     return jsonify(users)
+
+@app.route("/user/<int:userId>/")
+def user(userId):
+    sql = text("""SELECT * FROM "HPI_2017"."USERS" WHERE "ID" = {0}""".format(userId))
+    result = db.engine.execute(sql)
+    for row in result:
+        user = {}
+        user["ID"] = row[2]
+        user["NAME"] = row[0]
+        user["BIRTHDAY"] = row[1]
+        user["SEX"] = row[3]
+        user["HEIGHT"] = row[4]
+        return jsonify(user)
 
 @app.route("/user/<int:userId>/data/<string:dataKeys>/start/<string:startDate>/end/<string:endDate>")
 def data(userId, dataKeys, startDate, endDate):
