@@ -18,7 +18,7 @@ class LifeDiagram extends Component {
                     const x = parseFloat(item.getAttribute("x"));
                     const y = parseFloat(item.getAttribute("y"));
                     const width = parseFloat(item.getAttribute("width")) / 2;
-                    const height = parseFloat(item.getAttribute("height") / 3);
+                    const height = parseFloat(item.getAttribute("height") / 4);
                     item.nextSibling.firstChild.setAttribute("x", width + x);
                     item.nextSibling.firstChild.setAttribute("y", height + y);
                 }
@@ -39,8 +39,19 @@ class LifeDiagram extends Component {
             return (
 				<ResponsiveContainer height={300}>
 					<AreaChart
+
 						data={data.value}
 						margin={{top: 20, right: 30, left: 0, bottom: 0}}>
+                        <defs>
+                            <linearGradient id="colorEvents" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
+                                <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
+                            </linearGradient>
+                            <linearGradient id="colorGesundheit" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8}/>
+                                <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
+                            </linearGradient>
+                        </defs>
 						<XAxis xAxisId={0} dataKey="DATE"/>
 						<CartesianGrid strokeDasharray="3 3"/>
 						<Tooltip />
@@ -64,7 +75,8 @@ class LifeDiagram extends Component {
 									x2={endDateString}
 									label={<AreaLabel label={dataEvent["TITLE"]} />}
 									key={`refAreaEvents`+index.toString()}
-									stroke="red"
+									
+                                    fill="url(#colorEvents)"
 									strokeOpacity={0.3} />
 							);
 						})}
@@ -79,7 +91,7 @@ class LifeDiagram extends Component {
                                     x2={endDateString}
                                     label={<AreaLabel label={dataEvent["TREATMENT"]} />}
                                     key={`refAreaGesundheit`+index.toString()}
-                                    stroke="blue"
+                                    fill="url(#colorGesundheit)"
                                     strokeOpacity={0.3} />
                             );
                         })}
