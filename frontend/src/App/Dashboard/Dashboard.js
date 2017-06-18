@@ -4,6 +4,9 @@ import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColu
 import {Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
 import "./Dashboard.css";
 import User from "./User/User";
+import { connect, PromiseState } from 'react-refetch'
+import LifeDiagram from "./LifeDiagram/LifeDiagram";
+import settings from '../../settings';
 //import users from '../../data/users.json';
 import data from "../../data/mocked_data.json";
 // import data from '../../data/peak_min-peak_max-steps-data.json';
@@ -12,7 +15,6 @@ import datakeys from "../../data/datakeys.json";
 class Dashboard extends Component {
 	constructor() {
 		super();
-		this.data = data;
 		this.state = {
 			selected_datakeys: [],
 			selected: []
@@ -69,23 +71,7 @@ class Dashboard extends Component {
 					<div className="mt100 col-xs-12">
 					<Card className="h100">
 						<CardText>
-							<ResponsiveContainer height={300}>
-								<AreaChart
-									data={this.data}
-									margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
-									<XAxis dataKey="DATE" />
-									<CartesianGrid strokeDasharray="3 3" />
-									<Tooltip />
-									{this.state.selected_datakeys.map((datakey) => {
-										return(<YAxis yAxisId={datakey} hide={true} />);
-									})}
-									{this.state.selected_datakeys.map((datakey) => {
-										return (
-											<Area type="monotone" dataKey={datakey} yAxisId={datakey} stroke="#8884d8" fill="#8884d8"/>
-										);
-									})}
-								</AreaChart>
-							</ResponsiveContainer>
+							<LifeDiagram userId={this.props.match.params.userId} startDate="20160101" endDate="20161201" selectedKeys={["STEPS", "WEIGHT"]} />
 						</CardText>
 					</Card>
 					</div>
@@ -110,7 +96,6 @@ class Dashboard extends Component {
 												</TableRow>
 											);
 										})}
-
 									</TableBody>
 								</Table>
 							</CardText>
@@ -123,4 +108,7 @@ class Dashboard extends Component {
 	}
 }
 
-export default Dashboard;
+
+export default connect(props => ({
+    dataKeys: settings.backendUrl + `/datakeys/`,
+}))(Dashboard)
