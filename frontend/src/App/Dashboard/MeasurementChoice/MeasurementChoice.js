@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from "material-ui/Table";
-import "./../Dashboard.css";
 import {connect} from "react-refetch";
 import settings from "../../../settings";
+import './MeasurementChoice.css'
 
 class MeasurementChoice extends Component {
 	constructor() {
@@ -21,7 +21,7 @@ class MeasurementChoice extends Component {
 		let selected_datakeys = [];
 
 		if (selectedRows === "all") {
-			this.props.value.dataKeys.map((datakey) => {
+			this.props.dataKeys.value.map((datakey) => {
 				selected_datakeys = selected_datakeys.concat([datakey]);
 			});
 		}
@@ -52,14 +52,14 @@ class MeasurementChoice extends Component {
 				<Table multiSelectable={true} onRowSelection={selectedRows => this.onRowSelect(selectedRows)}>
 					<TableHeader>
 						<TableRow>
-							<TableHeaderColumn>Angezeigte Messreihen</TableHeaderColumn>
+							<TableHeaderColumn>Displayed easurement Series</TableHeaderColumn>
 						</TableRow>
 					</TableHeader>
 					<TableBody>
                         {dataKeys.value.map((datakey, index) => {
                             return (
 								<TableRow key={index} selected={this.isSelected(index)}>
-									<TableRowColumn>{datakey}</TableRowColumn>
+									<TableRowColumn><span className="data-keys">{datakey.split('_').join(' ').split('-').join(' ').toLowerCase()}</span></TableRowColumn>
 								</TableRow>
                             );
                         })}

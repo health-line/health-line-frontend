@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import {Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis, ReferenceArea} from "recharts";
-import "./../Dashboard.css";
 import {connect, PromiseState} from "react-refetch";
 import settings from "../../../settings";
 import AreaLabel from "./AreaLabel";
