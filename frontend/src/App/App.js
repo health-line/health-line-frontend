@@ -19,7 +19,7 @@ class App extends Component {
 			            iconClassNameRight="muidocs-icon-navigation-expand-more"
 		            />
 		            <Router>
-			            <Route exact path="/" component={Dashboard}/>
+			            <Route exact path="/:userId" component={Dashboard}/>
 		            </Router>
 	            </div>
             </MuiThemeProvider>

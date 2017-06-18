@@ -66,7 +66,8 @@ class Dashboard extends Component {
 		return (
 			<div className="dashboard container">
 
-				<User />
+				<User userId={this.props.match.params.userId}/>
+
 				<div className="row">
 					<div className="mt100 col-xs-12">
 					<Card className="h100">
@@ -124,6 +125,5 @@ class Dashboard extends Component {
 
 
 export default connect(props => ({
-    userFetch: `/users/${props.userId}`,
-    likesFetch: `/users/${props.userId}/likes`
+
 }))(Dashboard)

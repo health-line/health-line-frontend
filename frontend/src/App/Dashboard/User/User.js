@@ -20,77 +20,44 @@ import './../Dashboard.css';
 import users from '../../../data/users.json';
 import data from '../../../data/mocked_data.json';
 import datakeys from '../../../data/datakeys.json';
+import settings from '../../../settings';
 
 class User extends Component {
 
 	render() {
-		return (
-			<div className="row">
-				<div className="col-xs-12 col-sm-6">
-					<Card className="h100">
-						<CardText>
-							<List>
-								<ListItem primaryText="John Doe" leftIcon={<PersonIcon />} />
-								<ListItem primaryText="46 Jahre" leftIcon={<FavoriteIcon />} />
-								<ListItem primaryText="1,75 Meter" leftIcon={<AccessibilityIcon />} />
-								<ListItem primaryText="Männlich" leftIcon={<WCIcon />} />
-							</List>
-						</CardText>
-						<CardActions>
-							<FlatButton label="Informationen bearbeiten" />
-						</CardActions>
-					</Card>
+
+        const { user } = this.props
+
+        if (user.pending) {
+            return <div>Loading...</div>
+        } else if (user.rejected) {
+			return <span>{user.reason}</span>
+        } else if (user.fulfilled) {
+        	return (
+				<div className="row">
+					<div className="col-xs-12 col-sm-6">
+						<Card className="h100">
+							<CardText>
+								<List>
+									<ListItem primaryText="John Doe" leftIcon={<PersonIcon />}/>
+									<ListItem primaryText="46 Jahre" leftIcon={<FavoriteIcon />}/>
+									<ListItem primaryText="1,75 Meter" leftIcon={<AccessibilityIcon />}/>
+									<ListItem primaryText="Männlich" leftIcon={<WCIcon />}/>
+								</List>
+							</CardText>
+							<CardActions>
+								<FlatButton label="Informationen bearbeiten"/>
+							</CardActions>
+						</Card>
+					</div>
 				</div>
-				<div className="col-xs-12 col-sm-6">
-					<Card className="h100">
-						<CardText>
-							<Table>
-								<TableHeader>
-									<TableRow>
-										<TableHeaderColumn>ID</TableHeaderColumn>
-										<TableHeaderColumn>Name</TableHeaderColumn>
-										<TableHeaderColumn>Status</TableHeaderColumn>
-									</TableRow>
-								</TableHeader>
-								<TableBody>
-									<TableRow>
-										<TableRowColumn>1</TableRowColumn>
-										<TableRowColumn>John Smith</TableRowColumn>
-										<TableRowColumn>Employed</TableRowColumn>
-									</TableRow>
-									<TableRow>
-										<TableRowColumn>2</TableRowColumn>
-										<TableRowColumn>Randal White</TableRowColumn>
-										<TableRowColumn>Unemployed</TableRowColumn>
-									</TableRow>
-									<TableRow>
-										<TableRowColumn>3</TableRowColumn>
-										<TableRowColumn>Stephanie Sanders</TableRowColumn>
-										<TableRowColumn>Employed</TableRowColumn>
-									</TableRow>
-									<TableRow>
-										<TableRowColumn>4</TableRowColumn>
-										<TableRowColumn>Steve Brown</TableRowColumn>
-										<TableRowColumn>Employed</TableRowColumn>
-									</TableRow>
-									<TableRow>
-										<TableRowColumn>5</TableRowColumn>
-										<TableRowColumn>Christopher Nolan</TableRowColumn>
-										<TableRowColumn>Unemployed</TableRowColumn>
-									</TableRow>
-								</TableBody>
-							</Table>
-						</CardText>
-					</Card>
-				</div>
-			</div>
-		);
+			);
+        }
 	}
 }
 
 
 export default connect(props => ({
-    users: `/users/${props.userId}`,
-    likesFetch: `/users/${props.userId}/likes`
+    user: settings.backendUrl + `/user/${props.userId}/`,
 }))(User)
 
