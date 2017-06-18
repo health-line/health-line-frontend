@@ -1,26 +1,8 @@
 import React, {Component} from "react";
-import { connect, PromiseState } from 'react-refetch';
 import {Card, CardText} from "material-ui/Card";
 import {List, ListItem} from 'material-ui/List';
-import settings from '../../../settings';
 
 class EventTable extends Component {
-
-	constructor() {
-		super();
-		this.state = {
-			displayDetails: false,
-			displayedEvent: 0
-		};
-		this.onEventClick = this.onEventClick.bind(this);
-	}
-
-	onEventClick(index) {
-		this.setState({
-			displayDetails: true,
-			displayedEvent: index
-		});
-	}
 
 	getFormattedDate(dateString) {
 		const monthNames = [
@@ -32,9 +14,9 @@ class EventTable extends Component {
 	}
 
 	displayAttributes(eventData) {
-		if(this.state.displayDetails) {
-			console.log(this.state.displayedEvent);
-			const currentEvent = eventData[this.state.displayedEvent];
+		if(this.props.displayDetails) {
+			console.log(this.props.selectedIndex);
+			const currentEvent = this.props.events[this.props.selectedIndex];
 
 			return(
 				<List>
@@ -58,7 +40,7 @@ class EventTable extends Component {
 				eventData.map((event, index) => {
 					return(
 						<ListItem
-							onClick={() => this.onEventClick(index)}
+							onClick={() => this.props.onEventsChange(index)}
 							primaryText={event["TITLE"]}
 							secondaryText={event["DESCRIPTION"]}/>
 					);
@@ -72,28 +54,18 @@ class EventTable extends Component {
 	}
 
 	render() {
-		const { events } = this.props;
-		if (events.pending) {
-			return <div>Loading...</div>
-		} else if (events.rejected) {
-			return <span>{events.reason}</span>
-		} else if (events.fulfilled) {
-			const eventData = events.value;
-			return (
-				<div className="col-xs-12 col-sm-6">
-					<Card className="h100">
-						<CardText>
-							<List>
-								{ this.displayAttributes(eventData) }
-							</List>
-						</CardText>
-					</Card>
-				</div>
-			);
-		}
+		return (
+			<div className="col-xs-12 col-sm-6">
+				<Card className="h100">
+					<CardText>
+						<List>
+							{ this.displayAttributes(this.props.events) }
+						</List>
+					</CardText>
+				</Card>
+			</div>
+		);
 	}
 }
 
-export default connect(props => ({
-	events: settings.backendUrl + `/user/${props.userId}/events/`,
-}))(EventTable)
+export default EventTable;

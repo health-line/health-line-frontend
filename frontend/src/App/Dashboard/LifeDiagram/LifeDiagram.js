@@ -18,18 +18,18 @@ class LifeDiagram extends Component {
                     const x = parseFloat(item.getAttribute("x"));
                     const y = parseFloat(item.getAttribute("y"));
                     const width = parseFloat(item.getAttribute("width")) / 2;
-                    const height = parseFloat(item.getAttribute("height") / 4);
+                    const height = parseFloat(item.getAttribute("height") / 5);
                     item.nextSibling.firstChild.setAttribute("x", width + x);
                     item.nextSibling.firstChild.setAttribute("y", height + y);
                 }
             });
-		}, 3000);
+		}, 500);
 	}
 
 	render() {
-        const { data, events, gesundheitscloud } = this.props;
+        const { data, events } = this.props;
 
-        const allFetches = PromiseState.all([data, events, gesundheitscloud])
+        const allFetches = PromiseState.all([data, events])
 
         if (allFetches.pending) {
             return <div>Loading...</div>;
@@ -66,6 +66,10 @@ class LifeDiagram extends Component {
 						{events.value.map((dataEvent, index) => {
 							const startDateString = new Date(dataEvent["DATE_START"]).toISOString().split("T")[0];
                             const endDateString = new Date(dataEvent["DATE_END"]).toISOString().split("T")[0];
+                            let gradientString = "url(#colorEvents)";
+                            if (dataEvent["TYPE"] === "HEALTH_DATA") {
+                                gradientString = "url(#colorGesundheit)";
+                            }
 							return (
 								<ReferenceArea
 									xAxisId={0}
@@ -74,26 +78,10 @@ class LifeDiagram extends Component {
 									x2={endDateString}
 									label={<AreaLabel label={dataEvent["TITLE"]} />}
 									key={`refAreaEvents`+index.toString()}
-									
-                                    fill="url(#colorEvents)"
+                                    fill={gradientString}
 									strokeOpacity={0.3} />
 							);
 						})}
-                        {gesundheitscloud.value.map((dataEvent, index) => {
-                            const startDateString = new Date(dataEvent["DATE_START"]).toISOString().split("T")[0];
-                            const endDateString = new Date(dataEvent["DATE_END"]).toISOString().split("T")[0];
-                            return (
-                                <ReferenceArea
-                                    xAxisId={0}
-                                    yAxisId={this.props.selectedKeys[0]}
-                                    x1={startDateString}
-                                    x2={endDateString}
-                                    label={<AreaLabel label={dataEvent["TREATMENT"]} />}
-                                    key={`refAreaGesundheit`+index.toString()}
-                                    fill="url(#colorGesundheit)"
-                                    strokeOpacity={0.3} />
-                            );
-                        })}
 					</AreaChart>
 				</ResponsiveContainer>
             );
@@ -104,6 +92,5 @@ class LifeDiagram extends Component {
 
 export default connect(props => ({
 	events: settings.backendUrl + `/user/${props.userId}/events/`,
-	gesundheitscloud: settings.backendUrl + `/user/${props.userId}/gesundheitscloud/`,
 	data: settings.backendUrl + `/user/${props.userId}/data/${props.selectedKeys.join("+")}/start/${props.startDate}/end/${props.endDate}`
 }))(LifeDiagram)
