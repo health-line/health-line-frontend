@@ -1,6 +1,7 @@
 import React, {Component} from "react";
-import {Card, CardText} from "material-ui/Card";
+import {Card, CardText, CardActions} from "material-ui/Card";
 import {List, ListItem} from 'material-ui/List';
+import FlatButton from 'material-ui/FlatButton';
 
 class EventTable extends Component {
 
@@ -49,8 +50,16 @@ class EventTable extends Component {
 		}
 	}
 
-	onDisplayEventDetails() {
+	displayCardActions() {
+		if (this.props.displayDetails) {
 
+			return(<CardActions>
+				<FlatButton label="Return to list" onClick={() => this.props.onEventsChange(-1)} />
+			</CardActions>);
+		}
+		else {
+			return null;
+		}
 	}
 
 	render() {
@@ -62,6 +71,7 @@ class EventTable extends Component {
 							{ this.displayAttributes(this.props.events) }
 						</List>
 					</CardText>
+					{this.displayCardActions()}
 				</Card>
 			</div>
 		);

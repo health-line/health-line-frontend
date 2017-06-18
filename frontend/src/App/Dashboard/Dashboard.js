@@ -22,6 +22,12 @@ class Dashboard extends Component {
     }
 
     setSelectedEvent(index) {
+    	if (index === -1) {
+            this.setState({
+                displayDetails: false,
+            });
+            return;
+		}
         this.setState({
             displayDetails: true,
             displayedEvent: index
