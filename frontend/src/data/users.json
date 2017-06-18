@@ -1,14 +1,16 @@
 [
-	{
-		"BIRTHDAY": "Thu, 01 Jan 1970 00:00:00 GMT",
-		"ID": 1,
-		"NAME": "beau",
-		"SEX": "male"
-	},
-	{
-		"BIRTHDAY": "Mon, 28 May 1990 00:00:00 GMT",
-		"ID": 2,
-		"NAME": "future",
-		"SEX": "male"
-	}
+  {
+    "BIRTHDAY": "Thu, 01 Jan 1970 00:00:00 GMT", 
+    "HEIGHT": 182, 
+    "ID": 1, 
+    "NAME": "beau", 
+    "SEX": "male"
+  }, 
+  {
+    "BIRTHDAY": "Mon, 28 May 1990 00:00:00 GMT", 
+    "HEIGHT": 175, 
+    "ID": 2, 
+    "NAME": "future", 
+    "SEX": "male"
+  }
 ]

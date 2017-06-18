@@ -1,0 +1,387 @@
+[
+  {
+    "DATE": "2015-02-01", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 5448.0, 
+    "WEIGHT": 169.98
+  }, 
+  {
+    "DATE": "2015-02-02", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 18254.0, 
+    "WEIGHT": 170.5
+  }, 
+  {
+    "DATE": "2015-02-03", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 17651.0, 
+    "WEIGHT": 170.87
+  }, 
+  {
+    "DATE": "2015-02-04", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 5255.0, 
+    "WEIGHT": 170.62
+  }, 
+  {
+    "DATE": "2015-02-05", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 11596.0, 
+    "WEIGHT": 170.5
+  }, 
+  {
+    "DATE": "2015-02-06", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 10233.0, 
+    "WEIGHT": 172.82
+  }, 
+  {
+    "DATE": "2015-02-07", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 5850.0, 
+    "WEIGHT": 172.47
+  }, 
+  {
+    "DATE": "2015-02-08", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 4098.0, 
+    "WEIGHT": 172.12
+  }, 
+  {
+    "DATE": "2015-02-09", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 6637.0, 
+    "WEIGHT": 171.78
+  }, 
+  {
+    "DATE": "2015-02-10", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 6628.0, 
+    "WEIGHT": 171.43
+  }, 
+  {
+    "DATE": "2015-02-11", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 10811.0, 
+    "WEIGHT": 171.08
+  }, 
+  {
+    "DATE": "2015-02-12", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 18450.0, 
+    "WEIGHT": 170.74
+  }, 
+  {
+    "DATE": "2015-02-13", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 24331.0, 
+    "WEIGHT": 170.39
+  }, 
+  {
+    "DATE": "2015-02-14", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 5339.0, 
+    "WEIGHT": 170.05
+  }, 
+  {
+    "DATE": "2015-02-15", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 9988.0, 
+    "WEIGHT": 169.7
+  }, 
+  {
+    "DATE": "2015-02-16", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 6984.0, 
+    "WEIGHT": 169.35
+  }, 
+  {
+    "DATE": "2015-02-17", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 6221.0, 
+    "WEIGHT": 168.45
+  }, 
+  {
+    "DATE": "2015-02-18", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 21527.0, 
+    "WEIGHT": 167.88
+  }, 
+  {
+    "DATE": "2015-02-19", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 5081.0, 
+    "WEIGHT": 167.97
+  }, 
+  {
+    "DATE": "2015-02-20", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 14545.0, 
+    "WEIGHT": 168.07
+  }, 
+  {
+    "DATE": "2015-02-21", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 12652.0, 
+    "WEIGHT": 167.94
+  }, 
+  {
+    "DATE": "2015-02-22", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 7506.0, 
+    "WEIGHT": 168.73
+  }, 
+  {
+    "DATE": "2015-02-23", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 9636.0, 
+    "WEIGHT": 168.01
+  }, 
+  {
+    "DATE": "2015-02-24", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 8617.0, 
+    "WEIGHT": 169.16
+  }, 
+  {
+    "DATE": "2015-02-25", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 2609.0, 
+    "WEIGHT": 169.06
+  }, 
+  {
+    "DATE": "2015-02-26", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 0.0, 
+    "WEIGHT": 168.95
+  }, 
+  {
+    "DATE": "2015-02-27", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 9104.0, 
+    "WEIGHT": 168.85
+  }, 
+  {
+    "DATE": "2015-02-28", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 4323.0, 
+    "WEIGHT": 168.74
+  }, 
+  {
+    "DATE": "2015-03-01", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 5586.0, 
+    "WEIGHT": 168.86
+  }, 
+  {
+    "DATE": "2015-03-02", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 4054.0, 
+    "WEIGHT": 168.98
+  }, 
+  {
+    "DATE": "2015-03-03", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 8370.0, 
+    "WEIGHT": 168.17
+  }, 
+  {
+    "DATE": "2015-03-04", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 8193.0, 
+    "WEIGHT": 168.07
+  }, 
+  {
+    "DATE": "2015-03-05", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 9138.0, 
+    "WEIGHT": 167.98
+  }, 
+  {
+    "DATE": "2015-03-06", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 2184.0, 
+    "WEIGHT": 168.72
+  }, 
+  {
+    "DATE": "2015-03-07", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 3096.0, 
+    "WEIGHT": 169.2
+  }, 
+  {
+    "DATE": "2015-03-08", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 7475.0, 
+    "WEIGHT": 168.66
+  }, 
+  {
+    "DATE": "2015-03-09", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 2734.0, 
+    "WEIGHT": 169.54
+  }, 
+  {
+    "DATE": "2015-03-10", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 3532.0, 
+    "WEIGHT": 169.15
+  }, 
+  {
+    "DATE": "2015-03-11", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 7323.0, 
+    "WEIGHT": 168.77
+  }, 
+  {
+    "DATE": "2015-03-12", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 4402.0, 
+    "WEIGHT": 169.05
+  }, 
+  {
+    "DATE": "2015-03-13", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 8482.0, 
+    "WEIGHT": 168.68
+  }, 
+  {
+    "DATE": "2015-03-14", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 3450.0, 
+    "WEIGHT": 170.1
+  }, 
+  {
+    "DATE": "2015-03-15", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 5553.0, 
+    "WEIGHT": 169.48
+  }, 
+  {
+    "DATE": "2015-03-16", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 1591.0, 
+    "WEIGHT": 168.87
+  }, 
+  {
+    "DATE": "2015-03-17", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 11878.0, 
+    "WEIGHT": 168.25
+  }, 
+  {
+    "DATE": "2015-03-18", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 2157.0, 
+    "WEIGHT": 169.46
+  }, 
+  {
+    "DATE": "2015-03-19", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 13034.0, 
+    "WEIGHT": 168.57
+  }, 
+  {
+    "DATE": "2015-03-20", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 36.0, 
+    "WEIGHT": 167.67
+  }, 
+  {
+    "DATE": "2015-03-21", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 2142.0, 
+    "WEIGHT": 167.21
+  }, 
+  {
+    "DATE": "2015-03-22", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 13459.0, 
+    "WEIGHT": 166.75
+  }, 
+  {
+    "DATE": "2015-03-23", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 67.0, 
+    "WEIGHT": 168.44
+  }, 
+  {
+    "DATE": "2015-03-24", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 10908.0, 
+    "WEIGHT": 167.42
+  }, 
+  {
+    "DATE": "2015-03-25", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 7650.0, 
+    "WEIGHT": 167.65
+  }, 
+  {
+    "DATE": "2015-03-26", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 5406.0, 
+    "WEIGHT": 168.96
+  }, 
+  {
+    "DATE": "2015-03-27", 
+    "PEAK_MAX": 220.0, 
+    "PEAK_MIN": 159.0, 
+    "STEPS": 7049.0, 
+    "WEIGHT": 169.76
+  }
+]
