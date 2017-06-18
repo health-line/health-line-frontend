@@ -33,20 +33,21 @@ class User extends Component {
         } else if (user.rejected) {
 			return <span>{user.reason}</span>
         } else if (user.fulfilled) {
+        	const userData = user.value;
         	return (
 				<div className="row">
 					<div className="col-xs-12 col-sm-6">
 						<Card className="h100">
 							<CardText>
 								<List>
-									<ListItem primaryText="John Doe" leftIcon={<PersonIcon />}/>
-									<ListItem primaryText="46 Jahre" leftIcon={<FavoriteIcon />}/>
-									<ListItem primaryText="1,75 Meter" leftIcon={<AccessibilityIcon />}/>
-									<ListItem primaryText="Männlich" leftIcon={<WCIcon />}/>
+									<ListItem primaryText={userData["NAME"]} leftIcon={<PersonIcon />}/>
+									<ListItem primaryText={userData["BIRTHDAY"]} leftIcon={<FavoriteIcon />}/>
+									<ListItem primaryText={userData["HEIGHT"]} leftIcon={<AccessibilityIcon />}/>
+									<ListItem primaryText={userData["SEX"]} leftIcon={<WCIcon />}/>
 								</List>
 							</CardText>
 							<CardActions>
-								<FlatButton label="Informationen bearbeiten"/>
+								<FlatButton label="edit information"/>
 							</CardActions>
 						</Card>
 					</div>
