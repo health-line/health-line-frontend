@@ -1,9 +1,9 @@
 FROM node:latest
 
-WORKDIR /HackHPI/frontend
+WORKDIR /health-line-frontend
 
-COPY ./frontend .
+COPY . .
 RUN npm install
 
-EXPOSE 3000
-CMD npm run serve
+EXPOSE 5000
+CMD npm run deploy
