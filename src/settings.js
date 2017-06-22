@@ -1,5 +1,5 @@
 const settings = {
-    "backendUrl": "http://localhost:4200",
+    "backendUrl": "/api",
 };
 
 export default settings;
