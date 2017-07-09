@@ -17,6 +17,7 @@ class App extends Component {
 		            <Router>
 			            <Switch>
 				            <Route path="/login" component={Authentification}/>
+				            <Route path="/register" render={() => { return (<Authentification isRegistration={true}/>); }}/>
 				            <Route exact path="/:userId" component={Dashboard}/>
 			            </Switch>
 		            </Router>

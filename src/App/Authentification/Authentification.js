@@ -33,7 +33,7 @@ class Authentification extends Component {
 	}
 
 	handleAuthentification() {
-		if (this.props.register) {
+		if (this.props.isRegistration) {
 			const body = {
 				username: this.state.username,
 				email: this.state.email,
@@ -50,16 +50,27 @@ class Authentification extends Component {
 		}
 	}
 
+	getButtonLabel() {
+		if(this.props.isRegistration) {
+			return 'Register';
+		}
+		else {
+			return 'Login';
+		}
+	}
+
 	render() {
 		return (
 			<div className="authentification-view">
 				<form className="authentification-form">
+					{this.props.isRegistration &&
 					<TextField
 						floatingLabelText="Username"
 						value={this.state.username}
 						onChange={this.handleChangeUsername}
 						type="text"
 						fullWidth={true}/>
+					}
 					<TextField
 						floatingLabelText="E - Mail"
 						value={this.state.email}
@@ -73,7 +84,7 @@ class Authentification extends Component {
 						type="password"
 						fullWidth={true}/>
 					<RaisedButton
-						label="Register"
+						label={this.getButtonLabel()}
 						onclick={this.handleAuthentification}
 						className="authetification-button"
 						primary={true}
